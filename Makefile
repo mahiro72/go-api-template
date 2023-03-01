@@ -29,5 +29,5 @@ go-fmt: ## goのコードを整形します
 	gofmt -l -w .
 
 .PHONY: set-up
-set-up:
-	./scripts/setup.sh
+set-up: ## 環境の初期化を行います
+	@./scripts/setup.sh && echo "set-up command completed successfully 👍"

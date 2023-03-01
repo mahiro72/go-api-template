@@ -1,8 +1,29 @@
-# go api template
+# Go API Template
 
 go の API のテンプレートリポジトリです
 
-## ディレクトリ構成
+<br>
+
+## ✨ Getting Started
+
+環境の初期化を行う
+
+```
+make set-up
+```
+
+<br>
+
+docker環境を起動する
+
+```
+make up
+```
+
+
+<br>
+
+## 🌿 Directory
 
 DIは`pkg/adapter/http/handler`でまとめて行います
 
@@ -47,4 +68,23 @@ DIは`pkg/adapter/http/handler`でまとめて行います
 │   │   └── mock // usecaseのmockをまとめる
 │   └── usecase // usecaseの抽象
 ├── scripts // 環境構築時に必要なスクリプトなど
+```
+
+
+## ❓ Tips
+
+makeのhelpを表示する
+
+```
+make or make help
+```
+
+```
+help                 helpを表示する
+up                   docker環境を立ち上げる
+down                 docker環境を閉じる
+re                   volumesを削除してdocker環境を立ち上げる
+log                  docker環境のログを標示する
+go-fmt               goのコードを整形します
+set-up               環境の初期化を行います
 ```
