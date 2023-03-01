@@ -20,6 +20,25 @@ docker環境を起動する
 make up
 ```
 
+<br>
+
+APIを叩いてみる
+
+```
+curl --location --request GET 'localhost:8080/users/1'
+```
+
+以下のように返ってきたらOK
+
+response
+```json
+{
+    "id": 1,
+    "name": "hoge1",
+    "created_at": "2023-03-01T10:35:33Z"
+}
+```
+
 
 <br>
 
