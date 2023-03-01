@@ -1,0 +1,3 @@
+/docker/dev/db/mysql/data
+/.env/.env
+/tmp

@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  api:
+    container_name: user-api
+    build: 
+      context: .
+      dockerfile: ./docker/dev/api/Dockerfile
+    tty: true
+    restart: always
+    env_file:
+      - ./.env/.env
+    depends_on:
+      - mysql
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/go/src/github.com/mahiro72/go-api-template
+  mysql:
+    container_name: user-api-mysql
+    build:
+      context: .
+      dockerfile: ./docker/dev/db/mysql/Dockerfile
+    tty: true
+    restart: always
+    env_file:
+      - ./.env/.env
+    ports:
+      - 3306:3306
+    volumes:
+      - ./docker/dev/db/mysql/data:/var/lib/mysql
+      - ./docker/dev/db/mysql/initdb.d:/docker-entrypoint-initdb.d
